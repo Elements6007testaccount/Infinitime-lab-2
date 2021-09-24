@@ -12,7 +12,7 @@
 #include "components/ble/NotificationManager.h"
 #include "components/heartrate/HeartRateController.h"
 #include "components/motion/MotionController.h"
-#include "bg_clock_04.c"
+#include "displayapp/icons/bg_clock_04.c"
 using namespace Pinetime::Applications::Screens;
 
 LV_IMG_DECLARE(bg_clock_04);
