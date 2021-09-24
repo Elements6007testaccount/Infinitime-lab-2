@@ -514,11 +514,11 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_BG_CLOCK_
 };
 
 const lv_img_dsc_t bg_clock_04 = {
-  .header.always_zero = 0,
-  .header.w = 240,
-  .header.h = 240,
+  header.always_zero = 0,
+  header.w = 240,
+  header.h = 240,
   .data_size = 58624,
-  .header.cf = LV_IMG_CF_INDEXED_8BIT,
+  header.cf = LV_IMG_CF_INDEXED_8BIT,
   .data = bg_clock_04_map,
 };
 
