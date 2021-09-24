@@ -46,7 +46,7 @@ Clock::Clock(DisplayApp* app,
           break;
         
       }
-      return WatchFaceDigitalScreen();
+      return CustomWatchFaceScreen();
     }()} {
   settingsController.SetAppMenu(0);
 }
