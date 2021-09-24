@@ -17,7 +17,7 @@ using namespace Pinetime::Applications::Screens;
 
 LV_IMG_DECLARE(bg_clock_04);
 
-WatchFaceDigital::WatchFaceDigital(DisplayApp* app,
+CustomWatchFace::CustomWatchFace(DisplayApp* app,
                                    Controllers::DateTime& dateTimeController,
                                    Controllers::Battery& batteryController,
                                    Controllers::Ble& bleController,
@@ -105,12 +105,12 @@ WatchFaceDigital::WatchFaceDigital(DisplayApp* app,
   Refresh();
 }
 
-WatchFaceDigital::~WatchFaceDigital() {
+CustomWatchFace::~CustomWatchFace() {
   lv_task_del(taskRefresh);
   lv_obj_clean(lv_scr_act());
 }
 
-void WatchFaceDigital::Refresh() {
+void CustomWatchFace::Refresh() {
   batteryPercentRemaining = batteryController.PercentRemaining();
   if (batteryPercentRemaining.IsUpdated()) {
     auto batteryPercent = batteryPercentRemaining.Get();
@@ -217,8 +217,8 @@ void WatchFaceDigital::Refresh() {
       lv_obj_set_style_local_text_color(heartbeatIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCE1B1B));
       lv_label_set_text_fmt(heartbeatValue, "%d", heartbeat.Get());
     } else {
-      lv_obj_set_style_local_text_color(heartbeatIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x1B1B1B));
-      lv_label_set_text_static(heartbeatValue, "");
+      lv_obj_set_style_local_text_color(heartbeatIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCE1B1B));
+      lv_label_set_text_static(heartbeatValue, "BPM");
     }
 
     lv_obj_align(heartbeatIcon, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 0, 0);
