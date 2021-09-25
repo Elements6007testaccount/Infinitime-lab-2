@@ -68,7 +68,7 @@ CustomWatchFace::CustomWatchFace(DisplayApp* app,
   label_time = lv_label_create(lv_scr_act(), nullptr);
   lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 
-  lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER -50, -50);
+  lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID 70, -50);
 
   label_time_ampm = lv_label_create(lv_scr_act(), nullptr);
   lv_label_set_text_static(label_time_ampm, "");
@@ -189,7 +189,7 @@ void CustomWatchFace::Refresh() {
       lv_label_set_text_fmt(label_time, "%s\n%s", hoursChar, minutesChar);
 
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
-        lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_RIGHT_MID, 0, 0);
+        lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -50);
       } else {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
       }
