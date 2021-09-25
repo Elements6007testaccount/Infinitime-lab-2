@@ -36,13 +36,13 @@ Clock::Clock(DisplayApp* app,
           return WatchFaceDigitalScreen();
           break;
         case 1:
-          return CustomWatchFaceScreen();
+          return WatchFaceAnalogScreen();
           break;
         case 2:
           return PineTimeStyleScreen();
           break;
         case 3:
-          return WatchFaceAnalogScreen();
+          return CustomWatchFaceScreen();
           break;
         
       }
