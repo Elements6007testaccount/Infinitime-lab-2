@@ -182,7 +182,7 @@ void CustomWatchFace::Refresh() {
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
         lv_label_set_text(label_time_ampm, ampmChar);
         if (hoursChar[0] == '0') {
-          hoursChar[0] = ' ';
+          hoursChar[0] = '0';
         }
       }
 
@@ -191,7 +191,7 @@ void CustomWatchFace::Refresh() {
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -50);
       } else {
-        lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
+        lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -50);
       }
     }
 
