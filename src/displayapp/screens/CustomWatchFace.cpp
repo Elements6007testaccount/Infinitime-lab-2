@@ -34,7 +34,7 @@ CustomWatchFace::CustomWatchFace(DisplayApp* app,
     settingsController {settingsController},
     heartRateController {heartRateController},
     motionController {motionController} {
-  settingsController.SetClockFace(0);
+  settingsController.SetClockFace(3);
 
       
   lv_obj_t* bg_clock_04_img = lv_img_create(lv_scr_act(), NULL);
