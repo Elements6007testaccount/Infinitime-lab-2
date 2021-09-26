@@ -197,6 +197,7 @@ void CustomWatchFace::Refresh() {
       }
 
       lv_label_set_text_fmt(label_time, "%s\n%s", hoursChar, minutesChar);
+      lv_label_set_text_fmt(label_shtm, "%s\n%s", hoursChar, minutesChar);
 
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -30);
@@ -209,6 +210,7 @@ void CustomWatchFace::Refresh() {
     if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) {
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H24) {
         lv_label_set_text_fmt(label_date, "%s %d %s %d", dateTimeController.DayOfWeekShortToString(), day, dateTimeController.MonthShortToString(), year);
+        lv_label_set_text_fmt(label_shdt, "%s %d %s %d", dateTimeController.DayOfWeekShortToString(), day, dateTimeController.MonthShortToString(), year);
       } else {
         lv_label_set_text_fmt(label_date, "%s %s %d %d", dateTimeController.DayOfWeekShortToString(), dateTimeController.MonthShortToString(), day, year);
       }
