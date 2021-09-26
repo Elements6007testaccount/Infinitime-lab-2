@@ -74,10 +74,10 @@ CustomWatchFace::CustomWatchFace(DisplayApp* app,
   lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -30);
       
   label_shtm = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_recolor(label_shtm, true);
+  lv_label_set_recolor(label_shtm, lv_color_hex(0xA9A9A9);
   lv_obj_set_style_local_text_font(label_shtm, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 
-  lv_obj_align(label_shtm, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 65, -25);
+  lv_obj_align(label_shtm, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 75, -25);
 
 
   label_time_ampm = lv_label_create(lv_scr_act(), nullptr);
@@ -201,7 +201,7 @@ void CustomWatchFace::Refresh() {
 
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -30);
-        lv_obj_align(label_shtm, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 65, -25);
+        lv_obj_align(label_shtm, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 75, -25);
       } else {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
       }
