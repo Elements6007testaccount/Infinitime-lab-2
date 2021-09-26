@@ -65,7 +65,7 @@ CustomWatchFace::CustomWatchFace(DisplayApp* app,
   lv_obj_set_style_local_text_color(label_date, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFFFFFF));
   
   label_shdt = lv_label_create(lv_scr_act(), nullptr);
-  lv_obj_align(label_shdt, lv_scr_act(), LV_ALIGN_CENTER, 5, 65);
+  lv_obj_align(label_shdt, lv_scr_act(), LV_ALIGN_CENTER, 1, 61);
   lv_obj_set_style_local_text_color(label_shdt, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xA9A9A9));
       
   label_time = lv_label_create(lv_scr_act(), nullptr);
@@ -215,7 +215,7 @@ void CustomWatchFace::Refresh() {
         lv_label_set_text_fmt(label_date, "%s %s %d %d", dateTimeController.DayOfWeekShortToString(), dateTimeController.MonthShortToString(), day, year);
       }
       lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
-      lv_obj_align(label_shdt, lv_scr_act(), LV_ALIGN_CENTER, 5, 65);
+      lv_obj_align(label_shdt, lv_scr_act(), LV_ALIGN_CENTER, 1, 61);
 
       currentYear = year;
       currentMonth = month;
