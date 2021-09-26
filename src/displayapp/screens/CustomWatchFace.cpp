@@ -74,6 +74,7 @@ CustomWatchFace::CustomWatchFace(DisplayApp* app,
   lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -30);
       
   label_shtm = lv_label_create(lv_scr_act(), nullptr);
+  lv_label_set_recolor(label_shadow_time, true);
   lv_obj_set_style_local_text_font(label_shtm, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 
   lv_obj_align(label_shtm, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 65, -25);
