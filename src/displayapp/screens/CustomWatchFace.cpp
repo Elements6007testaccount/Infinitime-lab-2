@@ -189,7 +189,7 @@ void CustomWatchFace::Refresh() {
       lv_label_set_text_fmt(label_time, "%s\n%s", hoursChar, minutesChar);
 
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
-        lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -50);
+        lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -30);
       } else {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
       }
@@ -218,7 +218,7 @@ void CustomWatchFace::Refresh() {
       lv_label_set_text_fmt(heartbeatValue, "%d", heartbeat.Get());
     } else {
       lv_obj_set_style_local_text_color(heartbeatIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCE1B1B));
-      lv_label_set_text_static(heartbeatValue, "BPM");
+      lv_label_set_text_static(heartbeatValue, "");
     }
 
     lv_obj_align(heartbeatIcon, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 0, 0);
