@@ -62,13 +62,22 @@ CustomWatchFace::CustomWatchFace(DisplayApp* app,
 
   label_date = lv_label_create(lv_scr_act(), nullptr);
   lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
-  lv_obj_set_style_local_text_color(label_date, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));
+  lv_obj_set_style_local_text_color(label_date, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFFFFFF));
   
-
+  label_shdt = lv_label_create(lv_scr_act(), nullptr);
+  label_obj_align(label_shdt, lv_scr_act(), LV_ALIGN_CENTER, 5, 65);
+  lv_obj_set_style_local_text_color(label_shdt, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xA9A9A9));
+      
   label_time = lv_label_create(lv_scr_act(), nullptr);
   lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 
-  lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, -70, -30);
+  lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -30);
+      
+  label_shtm = lv_label_create(lv_scr_act(), nullptr);
+  lv_obj_set_style_local_text_font(label_shtm, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed, lv_color_hex(0xA9A9A9));
+
+  lv_obj_align(label_shtm, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 65, -25);
+
 
   label_time_ampm = lv_label_create(lv_scr_act(), nullptr);
   lv_label_set_text_static(label_time_ampm, "");
@@ -190,6 +199,7 @@ void CustomWatchFace::Refresh() {
 
       if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 70, -30);
+        lv_obj_align(label_shtm, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 65, -25);
       } else {
         lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
       }
@@ -202,6 +212,7 @@ void CustomWatchFace::Refresh() {
         lv_label_set_text_fmt(label_date, "%s %s %d %d", dateTimeController.DayOfWeekShortToString(), dateTimeController.MonthShortToString(), day, year);
       }
       lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
+      lv_obj_align(label_shdt, lv_scr_act(), LV_ALIGN_CENTER, 5, 65);
 
       currentYear = year;
       currentMonth = month;
